@@ -1,121 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import React from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function Home() {
+
+  const irParaPaginaDeUpload = () => {
+    console.log("Ir para página de descobrir idade");
+  };
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div className="min-h-screen bg-gradient-to-b from-[#0b0d1a] via-[#12122a] to-[#0b0d1a] text-white flex flex-col items-center justify-between">
+
+      <header className="pt-12 text-center">
+        <h1 className="text-4xl md:text-5xl font-serif text-yellow-300">
+          Astolfo, o Oráculo do Tempo
+        </h1>
+      </header>
+
+      <main className="flex flex-col md:flex-row items-center justify-center gap-16 px-6 py-10 w-full max-w-6xl">
+
+        <div className="flex justify-center">
+          <img
+            src="/foto_do_mago_sem_fundo.png"
+            alt="Astolfo o Oráculo"
+            className="w-72 drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
+          />
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+
+        <div className="bg-[#0e0e20]/80 border border-purple-500/40 backdrop-blur-md rounded-2xl p-10 shadow-[0_0_40px_rgba(168,85,247,0.3)] w-full max-w-md text-center">
+
+          <p className="text-gray-300 mb-8">
+            O oráculo pode revelar um segredo escondido no tempo.
+            Clique no botão abaixo e descubra o que as estrelas dizem sobre você.
           </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
 
-      <div className="ticks"></div>
+          <button
+            onClick={irParaPaginaDeUpload}
+            className="w-full flex items-center justify-center gap-3 bg-gradient-to-r from-purple-600 to-purple-400 hover:brightness-110 text-yellow-200 font-semibold py-4 rounded-xl shadow-lg transition"
+          >
+            <span className="text-2xl">👁</span>
+            Verifique sua idade
+          </button>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      </main>
+
+      <footer className="pb-8 text-gray-400 text-sm text-center">
+        O destino está escrito nas estrelas e nos seus pixels.
+      </footer>
+
+    </div>
+  );
 }
-
-export default App
