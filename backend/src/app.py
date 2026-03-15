@@ -1,11 +1,27 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
-from .routes import base_router
+from .config import settings
+from .routes import base_router, vision_router
 
-app = FastAPI()
-# Include routers
+# Validar configurações na inicialização
+settings.validate()
+
+app = FastAPI(
+    title=settings.API_TITLE,
+    description=settings.API_DESCRIPTION,
+    version=settings.API_VERSION,
+)
+
+# Configurar CORS aplicando middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=settings.CORS_ORIGINS,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Adicionar routers
 app.include_router(base_router)
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+app.include_router(vision_router)
