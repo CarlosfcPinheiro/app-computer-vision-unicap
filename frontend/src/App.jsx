@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./App.css"
+
 export default function Home() {
 
   const irParaPaginaDeUpload = () => {
@@ -34,9 +36,8 @@ export default function Home() {
 
           <button
             onClick={irParaPaginaDeUpload}
-            className="w-full flex items-center justify-center gap-3 bg-gradient-to-r from-purple-600 to-purple-400 hover:brightness-110 text-yellow-200 font-semibold py-4 rounded-xl shadow-lg transition"
+            className="botaoVerificar"
           >
-            <span className="text-2xl">👁</span>
             Verifique sua idade
           </button>
 

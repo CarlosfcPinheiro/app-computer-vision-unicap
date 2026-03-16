@@ -182,3 +182,29 @@
     border-right-color: var(--border);
   }
 }
+
+.botaoVerificar {
+  width: 200px;
+  height: 40px;
+  background-color: #3c0266;
+  padding: 6px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.botaoVerificar span {
+  font-size: 20px;
+}
+
+.botaoVerificar:hover {
+  background-color: #5c039b;
+}
