@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import Upload from "./Upload";
 
 import "./App.css"
 
 export default function Home() {
 
+  const [pagina, setPagina] = useState("home");
+
+  if (pagina === "upload") {
+    return <Upload voltar={() => setPagina("home")} />;
+  }
+
   const irParaPaginaDeUpload = () => {
-    console.log("Ir para página de descobrir idade");
+    setPagina("upload");
   };
 
   return (
@@ -31,15 +38,16 @@ export default function Home() {
 
           <p className="text-gray-300 mb-8">
             O guardião da idade pode revelar um segredo escondido no tempo.
-            Clique no botão abaixo e descubra o que o algoritimo diz sobre você.
+            Clique no botão abaixo e descubra o que o algoritmo diz sobre você.
           </p>
 
-          <button
+         <center> <button
             onClick={irParaPaginaDeUpload}
             className="botaoVerificar"
           >
             Verifique sua idade
           </button>
+          </center>
 
         </div>
 
