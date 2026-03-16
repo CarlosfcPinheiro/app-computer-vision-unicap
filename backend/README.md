@@ -110,6 +110,27 @@ O servidor estará disponível em:
 
 Acesse http://localhost:8000/docs e teste o endpoint `/vision/classify` enviando uma imagem.
 
+## 🐋 Execução com Docker
+
+```bash
+# Construir a imagem
+docker build -t computer-vision-api ./backend
+
+# Executar o container
+docker run -d \
+  -p 8000:8000 \
+  -e HF_API_TOKEN=seu_token_aqui \
+  -e HF_MODEL_NAME=ibombonato/swin-age-classifier \
+  --name vision-api \
+  computer-vision-api
+
+# Ver logs
+docker logs -f vision-api
+
+# Parar e remover
+docker stop vision-api && docker rm vision-api
+```
+
 ## 📚 API Endpoints
 
 ### Classificar Imagem
