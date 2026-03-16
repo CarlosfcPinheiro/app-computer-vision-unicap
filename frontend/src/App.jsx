@@ -11,7 +11,7 @@ export default function Home() {
 
       <header className="pt-12 text-center">
         <h1 className="text-4xl md:text-5xl font-serif text-yellow-300">
-          Astolfo, o Oráculo do Tempo
+          Astolfo, o guardião da idade
         </h1>
       </header>
 
@@ -19,8 +19,8 @@ export default function Home() {
 
         <div className="flex justify-center">
           <img
-            src="/foto_do_mago_sem_fundo.png"
-            alt="Astolfo o Oráculo"
+            src="/Foto do Guardião da Idade.png"
+            alt="Astolfo o Guardião da idade"
             className="w-72 drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
           />
         </div>
@@ -28,8 +28,8 @@ export default function Home() {
         <div className="bg-[#0e0e20]/80 border border-purple-500/40 backdrop-blur-md rounded-2xl p-10 shadow-[0_0_40px_rgba(168,85,247,0.3)] w-full max-w-md text-center">
 
           <p className="text-gray-300 mb-8">
-            O oráculo pode revelar um segredo escondido no tempo.
-            Clique no botão abaixo e descubra o que as estrelas dizem sobre você.
+            O guardião da idade pode revelar um segredo escondido no tempo.
+            Clique no botão abaixo e descubra o que o algoritimo diz sobre você.
           </p>
 
           <button
@@ -45,7 +45,7 @@ export default function Home() {
       </main>
 
       <footer className="pb-8 text-gray-400 text-sm text-center">
-        O destino está escrito nas estrelas e nos seus pixels.
+        A sua idade está escondida nos seus pixels.
       </footer>
 
     </div>
