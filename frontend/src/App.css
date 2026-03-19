@@ -1,25 +1,87 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+html, body{
+  height: 100%;
+  overflow: hidden;
+}
 
+/* ===== HOME ===== */
+.containerPrincipal {
+  height: 100vh;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  background: #281c2efe;
+
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ===== TÍTULO ===== */
+.titulo {
+  font-size: 48px;
+  font-weight: 467;
+  margin-bottom: 20px;
+  color: #713dcb;
+  letter-spacing: -0.5px;
+}
+
+/* ===== IMAGEM ===== */
+.imagemGuardiao {
+  width:400px;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+/* ===== TEXTO PRINCIPAL ===== */
+.descricao {
+  max-width: 600px;
+  font-size: 16px;
+
+  color: #c6b8de;
+
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* ===== BOTÃO ===== */
 .botaoVerificar {
   width: 200px;
   height: 40px;
-  background-color: #3c0266;
-  border: 1px solid white;
-  border-radius: 12px;
-  cursor: pointer;
-  color: white;
-  font-size: 16px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #4c1d95;
+  border: none;
+  border-radius: 10px;
+
+  color: white;
+  font-size: 14px;
+
+  cursor: pointer;
 
   transition: all 0.3s ease;
 }
 
 .botaoVerificar:hover {
-  background-color: #5c039b;
-  transform: scale(1.05);
+  background-color: #6d28d9;
+  transform: translateY(-2px);
+}
+
+/* ===== RODAPÉ ===== */
+.rodape {
+  margin-top: 10px;
+  font-size: 14px;
+
+  color: #c6b8de;
+
 }
 
 

@@ -1,11 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Upload from "./Upload";
 
-import "./App.css"
+import "./App.css";
 
 export default function Home() {
-
   const [pagina, setPagina] = useState("home");
+  const textoCompleto = "Astolfo, o guardião da idade";
+  const [textoDigitado, setTextoDigitado] = useState("");
+
+  useEffect(() => {
+    let text = 0;
+
+    const intervalo = setInterval(() => {
+      setTextoDigitado(textoCompleto.slice(0, text + 1));
+      text++
+
+      if (text == textoCompleto.length){
+        clearInterval(intervalo);
+      }
+    }, 50);
+    return () => clearInterval(intervalo);
+  }, []);
 
   if (pagina === "upload") {
     return <Upload voltar={() => setPagina("home")} />;
@@ -16,45 +31,40 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0b0d1a] via-[#12122a] to-[#0b0d1a] text-white flex flex-col items-center justify-between">
+    <div className="containerPrincipal">
 
-      <header className="pt-12 text-center">
-        <h1 className="text-4xl md:text-5xl font-serif text-yellow-300">
-          Astolfo, o guardião da idade
+      <header>
+        <h1 className="titulo">
+          {textoDigitado}
         </h1>
       </header>
 
-      <main className="flex flex-col md:flex-row items-center justify-center gap-16 px-6 py-10 w-full max-w-6xl">
+      <main>
 
-        <div className="flex justify-center">
-          <img
-            src="/Foto do Guardião da Idade.png"
-            alt="Astolfo o Guardião da idade"
-            className="w-72 drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
-          />
-        </div>
+        <img
+          src="/Foto do Guardião da Idade.png"
+          alt="Astolfo o Guardião da idade"
+          className="imagemGuardiao"
+        />
 
-        <div className="bg-[#0e0e20]/80 border border-purple-500/40 backdrop-blur-md rounded-2xl p-10 shadow-[0_0_40px_rgba(168,85,247,0.3)] w-full max-w-md text-center">
+        <p className="descricao">
+          O guardião da idade pode revelar um segredo escondido no tempo.
+          Clique no botão abaixo e descubra o que o algoritmo diz sobre você.
+        </p>
 
-          <p className="text-gray-300 mb-8">
-            O guardião da idade pode revelar um segredo escondido no tempo.
-            Clique no botão abaixo e descubra o que o algoritmo diz sobre você.
-          </p>
-
-         <center> <button
-            onClick={irParaPaginaDeUpload}
-            className="botaoVerificar"
-          >
-            Verifique sua idade
-          </button>
-          </center>
-
-        </div>
+        <button
+          onClick={irParaPaginaDeUpload}
+          className="botaoVerificar"
+        >
+          Verifique sua idade
+        </button>
 
       </main>
 
-      <footer className="pb-8 text-gray-400 text-sm text-center">
-        A sua idade está escondida nos seus pixels.
+      <footer>
+        <p className="rodape">
+          A sua idade está escondida nos seus pixels.
+        </p>
       </footer>
 
     </div>
